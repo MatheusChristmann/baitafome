@@ -1,7 +1,7 @@
 import 'package:baitafome/pages/mainpage.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   runApp(const BaitaFomeApp());
 }
 
@@ -10,12 +10,8 @@ class BaitaFomeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BaitaFome',
-      theme: ThemeData(      
-        primarySwatch: Colors.amber,
-      ),
-      home: const MainPage(title: 'BaitaFome'),
+    return MaterialApp(           
+      home: const MainPage(),
     );
   }
 }
