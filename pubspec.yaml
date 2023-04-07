@@ -1,4 +1,4 @@
-name: BaitaFome
+name: baitafome
 description: A new Flutter project.
 
 publish_to: 'none' 
@@ -7,7 +7,6 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
-
 
 dependencies:
   flutter:
@@ -19,6 +18,14 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_launcher_icons: "^0.12.0"
+
+flutter_icons:
+  windows:
+    generate: true
+    image_path: "assets/icone.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  
   flutter_lints: ^2.0.0
 
 flutter:
