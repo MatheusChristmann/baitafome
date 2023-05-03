@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ConfigPage extends StatefulWidget {
   const ConfigPage({super.key});
@@ -23,7 +24,7 @@ class _ConfigPageState extends State<ConfigPage> {
           color: Color.fromRGBO(83, 85, 82, 1),
           tooltip: 'Voltar a Tela Principal',
         ),
-        title: Text('Configurações',
+        title: Text(AppLocalizations.of(context)!.title_config_page,
           style: TextStyle(
             color: Color.fromRGBO(83, 85, 82, 1),
           ),
