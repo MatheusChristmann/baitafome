@@ -12,6 +12,7 @@ class BaitaFomeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(           
       home: const MainPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
