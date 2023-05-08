@@ -73,16 +73,15 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Este á o aplicativo BaitaFome que será desenvolvido para Gerenciamento de Receitas Culinárias Pessoais!',
-              style: TextStyle(
-                fontSize: 15,
+        child: GridView.count(
+          crossAxisCount: 6,
+          children: List.generate(18, (index) {
+            return Container(
+              child: Card(
+                color: Colors.grey,
               ),
-            ),
-          ],
+            );
+          }),
         ),
       ),
       floatingActionButton: FloatingActionButton(
