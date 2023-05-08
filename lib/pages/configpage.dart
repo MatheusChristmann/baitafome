@@ -22,7 +22,7 @@ class _ConfigPageState extends State<ConfigPage> {
             );
           },
           color: Color.fromRGBO(83, 85, 82, 1),
-          tooltip: 'Voltar a Tela Principal',
+          tooltip: AppLocalizations.of(context)!.tooltip_return_to_mainmenu,
         ),
         title: Text(AppLocalizations.of(context)!.title_config_page,
           style: TextStyle(
@@ -31,26 +31,7 @@ class _ConfigPageState extends State<ConfigPage> {
         ),
         centerTitle: true,
       ),
-      body: Column(      
-        children: <Widget>[
-          const SizedBox(height: 18),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: Text('SOBRE',            
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,              
-              ),            
-            ),          
-          ),          
-          const Divider(
-            height: 20,          
-            indent: 5,
-            endIndent: 5,
-            color: Colors.black,
-          ),
-        ],
+      body: Column(              
       ),
       backgroundColor: Color.fromRGBO(235, 230, 210, 1),      
     );

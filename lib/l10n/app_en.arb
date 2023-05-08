@@ -1,3 +1,9 @@
 {
-   "title_config_page": "Settings"
+   "title_main_page": "My Recipes",
+   "tooltip_settings": "Settings",
+   "tooltip_search_for_recipe": "Search for Recipe",
+   "tooltip_add_recipe": "Add Recipe",
+
+   "title_config_page": "Settings",
+   "tooltip_return_to_mainmenu": "Return to Main Screen"
 }
