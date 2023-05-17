@@ -28,7 +28,8 @@ class _MainPageState extends State<MainPage> {
           color: Color.fromRGBO(83, 85, 82, 1),
           tooltip: AppLocalizations.of(context)!.tooltip_settings,
         ),
-        title: Text(AppLocalizations.of(context)!.title_main_page,
+        title: Text(
+          AppLocalizations.of(context)!.title_main_page,
           style: TextStyle(
             color: Color.fromRGBO(83, 85, 82, 1),
           ),
@@ -42,40 +43,45 @@ class _MainPageState extends State<MainPage> {
             tooltip: AppLocalizations.of(context)!.tooltip_search_for_recipe,
           ),
           PopupMenuButton(
-            color: Color.fromRGBO(246, 247, 241, 1),
-            icon: Icon(Icons.more_vert, color: Colors.black),
-            itemBuilder: (context) {
-              return [
-                PopupMenuItem<int>(
-                  value: 0,
-                  child: Text("Minha Conta"),
-                ),
-                PopupMenuItem<int>(
-                  value: 1,
-                  child: Text("Opções"),
-                ),
-                PopupMenuItem<int>(
-                  value: 2,
-                  child: Text("Sair"),
-                ),
-              ];
-            },
-            offset: Offset(0, 64),
-            onSelected: (value) {
-              if (value == 0) {
-                print("opção de valor 0");
-              } else if (value == 1) {
-                print("opção de valor 1");
-              } else if (value == 2) {
-                print("opção de valor 2");
-              }
-            }
-          )
+              color: Color.fromRGBO(246, 247, 241, 1),
+              icon: Icon(Icons.more_vert, color: Colors.black),
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem<int>(
+                    value: 0,
+                    child: Text("Minha Conta"),
+                  ),
+                  PopupMenuItem<int>(
+                    value: 1,
+                    child: Text("Opções"),
+                  ),
+                  PopupMenuItem<int>(
+                    value: 2,
+                    child: Text("Sair"),
+                  ),
+                ];
+              },
+              offset: Offset(0, 64),
+              onSelected: (value) {
+                if (value == 0) {
+                  print("opção de valor 0");
+                } else if (value == 1) {
+                  print("opção de valor 1");
+                } else if (value == 2) {
+                  print("opção de valor 2");
+                }
+              })
         ],
       ),
       body: Center(
+          child: ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: 630),
         child: GridView.count(
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
           crossAxisCount: 6,
+          childAspectRatio: 1.13,
           children: List.generate(18, (index) {
             return Container(
               child: Card(
@@ -84,7 +90,7 @@ class _MainPageState extends State<MainPage> {
             );
           }),
         ),
-      ),
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: AppLocalizations.of(context)!.tooltip_add_recipe,
