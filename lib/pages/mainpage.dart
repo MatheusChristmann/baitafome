@@ -1,6 +1,9 @@
 import 'package:baitafome/pages/configpage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'categorys.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -73,24 +76,7 @@ class _MainPageState extends State<MainPage> {
               })
         ],
       ),
-      body: Center(
-          child: ConstrainedBox(
-        constraints: BoxConstraints(maxHeight: 630),
-        child: GridView.count(
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 6,
-          childAspectRatio: 1.13,
-          children: List.generate(18, (index) {
-            return Container(
-              child: Card(
-                color: Colors.grey,
-              ),
-            );
-          }),
-        ),
-      )),
+      body: Categorys(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: AppLocalizations.of(context)!.tooltip_add_recipe,
