@@ -1,5 +1,5 @@
 name: baitafome
-description: A new Flutter project.
+description: App BaitaFome para receitas culinarias.
 
 publish_to: 'none' 
 
@@ -37,3 +37,17 @@ flutter_icons:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/categorys/massas.png
+    - assets/categorys/sobremesas.png
+    - assets/categorys/bolos.png
+    - assets/categorys/carnes.png
+    - assets/categorys/peixes.png
+    - assets/categorys/saladas.png
+    - assets/categorys/sucos.png
+    - assets/categorys/tortas.png
+    - assets/categorys/sopas.png
+    - assets/categorys/frangos.png
+    - assets/categorys/paes.png
+    - assets/icon.png
