@@ -1,14 +1,27 @@
 import 'package:baitafome/pages/mainpage.dart';
+import 'package:baitafome/models/type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:window_manager/window_manager.dart';
 
+import 'dao/database.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await windowManager.ensureInitialized();
 
+  //generatin database instance
+  final database =
+      await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+
+  //generatin types for the app
+  // final typeDao = database.typeDao;
+  // final type = Type(1, 'Bolo');
+
+  // await typeDao.insertType(type);
+
+  //window manager settings
   WindowOptions windowOptions = WindowOptions(
       windowButtonVisibility: true,
       center: true,

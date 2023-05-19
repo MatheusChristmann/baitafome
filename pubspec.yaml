@@ -11,20 +11,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # Floor for project database
+  floor: ^1.4.2
+
+  # Localizations for internationalization
   flutter_localizations:
     sdk: flutter
+
+  # Format DateTime if needs to use
   intl:
+
+  # Window Manager utilities
   window_manager: ^0.3.2
-  floor:
+
+  #database for the project
+  sqflite: ^2.2.8+4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # Launcher Icons 
   flutter_launcher_icons: "^0.12.0"
 
-  floor_generator:
-  build_runner:
+  # Floor for project database
+  floor_generator: ^1.4.2
+  build_runner: ^2.1.2
 
 flutter_icons:
   windows:

@@ -1,9 +1,11 @@
-class Type{
-  int id;
-  String description;
+import 'package:floor/floor.dart';
 
-  Type({
-    required this.id,
-    required this.description
-  });
+@entity
+class Type {
+  @PrimaryKey()
+  int? id;
+
+  String? description;
+
+  Type({this.id, this.description});
 }

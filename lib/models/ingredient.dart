@@ -2,13 +2,14 @@ import 'dart:ffi';
 import 'package:baitafome/models/recipe.dart';
 import 'package:floor/floor.dart';
 
-class Ingredient{
+@entity
+class Ingredient {
   @PrimaryKey(autoGenerate: true)
   int? id;
 
   String? description;
 
-  Double? quantity;
+  double? quantity;
 
   @ForeignKey(entity: Recipe, parentColumns: ['id'], childColumns: ['recipeId'])
   int? recipe;
