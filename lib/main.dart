@@ -1,3 +1,4 @@
+import 'package:baitafome/generatetypes.dart';
 import 'package:baitafome/pages/mainpage.dart';
 import 'package:baitafome/models/type.dart';
 import 'package:flutter/material.dart';
@@ -11,15 +12,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
 
-  //generatin database instance
-  final database =
-      await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
-
-  //generatin types for the app
-  // final typeDao = database.typeDao;
-  // final type = Type(1, 'Bolo');
-
-  // await typeDao.insertType(type);
+  // //generating DB and types
+  // generateTypes();
 
   //window manager settings
   WindowOptions windowOptions = WindowOptions(

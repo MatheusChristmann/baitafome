@@ -3,9 +3,9 @@ import 'package:floor/floor.dart';
 @entity
 class Type {
   @PrimaryKey()
-  int? id;
+  final int id;
 
-  String? description;
+  final String description;
 
-  Type({this.id, this.description});
+  Type({required this.id, required this.description});
 }

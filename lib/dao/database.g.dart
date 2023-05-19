@@ -89,7 +89,7 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER, `description` TEXT, PRIMARY KEY (`id`))');
+            'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `Recipe` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `description` TEXT, `type` INTEGER)');
         await database.execute(
@@ -142,7 +142,7 @@ class _$TypeDao extends TypeDao {
   Future<List<Type>> findAllTypes() async {
     return _queryAdapter.queryList('SELECT * FROM Type',
         mapper: (Map<String, Object?> row) => Type(
-            id: row['id'] as int?, description: row['description'] as String?));
+            id: row['id'] as int, description: row['description'] as String));
   }
 
   @override
@@ -155,7 +155,7 @@ class _$TypeDao extends TypeDao {
   Future<Type?> findTypeById(int id) async {
     return _queryAdapter.query('SELECT * FROM Type WHERE id = ?1',
         mapper: (Map<String, Object?> row) => Type(
-            id: row['id'] as int?, description: row['description'] as String?),
+            id: row['id'] as int, description: row['description'] as String),
         arguments: [id]);
   }
 
@@ -163,7 +163,7 @@ class _$TypeDao extends TypeDao {
   Future<Type?> findTypeByName(String description) async {
     return _queryAdapter.query('SELECT * FROM Type WHERE description = ?1',
         mapper: (Map<String, Object?> row) => Type(
-            id: row['id'] as int?, description: row['description'] as String?),
+            id: row['id'] as int, description: row['description'] as String),
         arguments: [description]);
   }
 
