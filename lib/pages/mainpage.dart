@@ -1,3 +1,4 @@
+import 'package:baitafome/pages/addrecipe.dart';
 import 'package:baitafome/pages/configpage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +79,9 @@ class _MainPageState extends State<MainPage> {
       ),
       body: Categorys(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          addRecipe(context);
+        },
         tooltip: AppLocalizations.of(context)!.tooltip_add_recipe,
         backgroundColor: Color.fromRGBO(223, 138, 84, 1),
         child: Icon(
