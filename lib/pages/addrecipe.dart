@@ -54,21 +54,25 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
             controller: descriptionController,
             decoration: InputDecoration(labelText: 'Parâmetro description'),
           ),
-          DropdownButton<Type>(
-            hint: Text('Selecione um tipo'),
-            value: selectedType,
-            onChanged: (Type? value) {
-              setState(() {
-                selectedType = value;
-              });
-            },
-            items: allowedTypes!.map((Type type) {
-              return DropdownMenuItem<Type>(
-                value: type,
-                child: Text(type.description),
-              );
-            }).toList(),
-          ),
+          SizedBox(
+              width: double.infinity,
+              child: DropdownButton<Type>(
+                hint: Text('Selecione um tipo'),
+                value: selectedType,
+                onChanged: (Type? value) {
+                  setState(() {
+                    selectedType = value;
+                  });
+                },
+                items: allowedTypes!.map((Type type) {
+                  return DropdownMenuItem<Type>(
+                    value: type,
+                    child: Text(type.description),
+                  );
+                }).toList(),
+                isExpanded: true,
+                underline: Container(), //Tira a linha de baixo
+              ))
         ],
       ),
       actions: [
