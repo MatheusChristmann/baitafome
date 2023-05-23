@@ -5,22 +5,22 @@ import 'package:baitafome/main.dart';
 import 'package:baitafome/pages/mainpage.dart';
 import '../dao/database.dart';
 
-// Controller para o nome da receita
-final TextEditingController nameController = TextEditingController();
-
-// Controller para a descrição da receita
-final TextEditingController descriptionController = TextEditingController();
-
-// Objeto Type selecionado
-Type? selectedType;
-
 class AddRecipeDialog extends StatefulWidget {
   @override
   _AddRecipeDialogState createState() => _AddRecipeDialogState();
 }
 
 class _AddRecipeDialogState extends State<AddRecipeDialog> {
-  late List<Type> allowedTypes;
+  List<Type>? allowedTypes;
+
+  // Controller para o nome da receita
+  final TextEditingController nameController = TextEditingController();
+
+// Controller para a descrição da receita
+  final TextEditingController descriptionController = TextEditingController();
+
+// Objeto Type selecionado
+  Type? selectedType;
 
   @override
   void initState() {
@@ -62,7 +62,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
                 selectedType = value;
               });
             },
-            items: allowedTypes.map((Type type) {
+            items: allowedTypes!.map((Type type) {
               return DropdownMenuItem<Type>(
                 value: type,
                 child: Text(type.description),
@@ -81,10 +81,14 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
         TextButton(
           child: Text('Salvar'),
           onPressed: () {
-            print('Parâmetro 1: ${nameController.text}');
-            print('Parâmetro 2: ${descriptionController.text}');
-            if (selectedType != null) {
+            if (selectedType != null &&
+                descriptionController != '' &&
+                nameController != '') {
+              print('Parâmetro 1: ${nameController.text}');
+              print('Parâmetro 2: ${descriptionController.text}');
               print('Parâmetro 3: ${selectedType!.id}');
+            } else {
+              print('Falta algum parametro');
             }
             Navigator.of(context).pop();
           },
