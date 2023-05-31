@@ -65,8 +65,6 @@ class _$AppDatabase extends AppDatabase {
 
   RecipeDao? _recipeDaoInstance;
 
-  IngredientDao? _ingredientDaoInstance;
-
   Future<sqflite.Database> open(
     String path,
     List<Migration> migrations, [
@@ -92,8 +90,6 @@ class _$AppDatabase extends AppDatabase {
             'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `Recipe` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `description` TEXT, `type` INTEGER)');
-        await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Ingredient` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `description` TEXT, `quantity` REAL, `recipe` INTEGER)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -109,11 +105,6 @@ class _$AppDatabase extends AppDatabase {
   @override
   RecipeDao get recipeDao {
     return _recipeDaoInstance ??= _$RecipeDao(database, changeListener);
-  }
-
-  @override
-  IngredientDao get ingredientDao {
-    return _ingredientDaoInstance ??= _$IngredientDao(database, changeListener);
   }
 }
 
@@ -235,15 +226,4 @@ class _$RecipeDao extends RecipeDao {
   Future<void> insertRecipe(Recipe recipe) async {
     await _recipeInsertionAdapter.insert(recipe, OnConflictStrategy.abort);
   }
-}
-
-class _$IngredientDao extends IngredientDao {
-  _$IngredientDao(
-    this.database,
-    this.changeListener,
-  );
-
-  final sqflite.DatabaseExecutor database;
-
-  final StreamController<String> changeListener;
 }

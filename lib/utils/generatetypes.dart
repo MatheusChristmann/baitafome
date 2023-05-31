@@ -4,8 +4,7 @@ import 'package:baitafome/dao/type_dao.dart';
 
 void generateTypes() async {
   //generatin database instance
-  final database =
-      await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+  final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
 
   //generatin types for the app
   final typeDao = database.typeDao;

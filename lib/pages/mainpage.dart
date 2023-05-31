@@ -39,13 +39,7 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-            color: Color.fromRGBO(83, 85, 82, 1),
-            tooltip: AppLocalizations.of(context)!.tooltip_search_for_recipe,
-          ),
+        actions: <Widget>[          
           PopupMenuButton(
               color: Color.fromRGBO(246, 247, 241, 1),
               icon: Icon(Icons.more_vert, color: Colors.black),
