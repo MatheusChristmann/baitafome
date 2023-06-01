@@ -11,31 +11,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # Floor for project database
   floor: ^1.4.2
-
-  # Localizations for internationalization
   flutter_localizations:
     sdk: flutter
-
-  # Format DateTime if needs to use
   intl:
-
-  # Window Manager utilities
   window_manager: ^0.3.2
-
-  #database for the project
   sqflite: ^2.2.8+4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # Launcher Icons 
   flutter_launcher_icons: "^0.12.0"
-
-  # Floor for project database
   floor_generator: ^1.4.2
   build_runner: ^2.1.2
 
@@ -43,14 +29,12 @@ flutter_icons:
   windows:
     generate: true
     image_path: "assets/icon.png"
-    icon_size: 48 # min:48, max:256, default: 48
-  
+    icon_size: 48 
   flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
   generate: true
-
   assets:
     - assets/categorys/massas.png
     - assets/categorys/sobremesas.png

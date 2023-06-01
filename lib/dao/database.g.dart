@@ -89,7 +89,7 @@ class _$AppDatabase extends AppDatabase {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `Type` (`id` INTEGER NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Recipe` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `description` TEXT, `type` INTEGER)');
+            'CREATE TABLE IF NOT EXISTS `Recipe` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `description` TEXT, `ingredients` TEXT, `type` INTEGER)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -176,6 +176,7 @@ class _$RecipeDao extends RecipeDao {
                   'id': item.id,
                   'name': item.name,
                   'description': item.description,
+                  'ingredients': item.ingredients,
                   'type': item.type
                 });
 
@@ -193,6 +194,7 @@ class _$RecipeDao extends RecipeDao {
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
+            ingredients: row['ingredients'] as String?,
             type: row['type'] as int?));
   }
 
@@ -208,6 +210,7 @@ class _$RecipeDao extends RecipeDao {
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
+            ingredients: row['ingredients'] as String?,
             type: row['type'] as int?),
         arguments: [id]);
   }
@@ -218,6 +221,7 @@ class _$RecipeDao extends RecipeDao {
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
+            ingredients: row['ingredients'] as String?,
             type: row['type'] as int?),
         arguments: [name]);
   }
