@@ -1,4 +1,4 @@
-import 'package:baitafome/pages/configpage.dart';
+import 'package:baitafome/pages/recipe.dart';
 import 'package:flutter/material.dart';
 
 class Categorys extends StatelessWidget {
@@ -12,46 +12,32 @@ class Categorys extends StatelessWidget {
         crossAxisCount: 6,
         childAspectRatio: 1.13,
         children: [
-          //
-          // Categoria Vazia
-          //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
-              elevation: 0,
-              color: Color.fromRGBO(235, 230, 210, 1),
-            ),
+          Card(
+            elevation: 0,
+            color: Color.fromRGBO(235, 230, 210, 1),
           ),
-          //
+
           // Categoria Sobremesas
-          //
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                  builder: (context) => RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
             child: Card(
-                elevation: 0,
-                color: Color.fromRGBO(235, 230, 210, 1),
-                child: Column(
-                  children: [
-                    Expanded(
-                        child: Image.asset('assets/categorys/sobremesas.png'))
+              elevation: 0,
+              color: Color.fromRGBO(235, 230, 210, 1),
+              child: Column(
+                children: [
+                    Expanded(child: Image.asset('assets/categorys/sobremesas.png')),
+                    Text('Sobremesas'),
                   ],
-                )),
+                )
+              ),
+
           ),
           //
           // Categoria Bolos
@@ -62,7 +48,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -71,7 +57,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/bolos.png'))
+                    Expanded(child: Image.asset('assets/categorys/bolos.png')),
+                    Text('Bolos'),
                   ],
                 )),
           ),
@@ -84,7 +71,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -93,7 +80,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/carnes.png'))
+                    Expanded(child: Image.asset('assets/categorys/carnes.png')),
+                    Text('Carnes'),
                   ],
                 )),
           ),
@@ -106,7 +94,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -115,46 +103,25 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/peixes.png'))
+                    Expanded(child: Image.asset('assets/categorys/peixes.png')),
+                    Text('Peixes'),
                   ],
                 )),
           ),
           //
           // Categoria Vazia
           //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
+          Card(
               elevation: 0,
               color: Color.fromRGBO(235, 230, 210, 1),
             ),
-          ),
           //
           // Categoria Vazia
           //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
+          Card(
               elevation: 0,
               color: Color.fromRGBO(235, 230, 210, 1),
             ),
-          ),
           //
           // Categoria Tortas
           //
@@ -164,7 +131,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -173,7 +140,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/tortas.png'))
+                    Expanded(child: Image.asset('assets/categorys/tortas.png')),
+                    Text('Tortas'),
                   ],
                 )),
           ),
@@ -186,7 +154,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -195,7 +163,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/massas.png'))
+                    Expanded(child: Image.asset('assets/categorys/massas.png')),
+                    Text('Massas'),
                   ],
                 )),
           ),
@@ -208,7 +177,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -217,7 +186,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/sucos.png'))
+                    Expanded(child: Image.asset('assets/categorys/sucos.png')),
+                    Text('Sucos'),
                   ],
                 )),
           ),
@@ -230,7 +200,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -239,46 +209,25 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/saladas.png'))
+                    Expanded(child: Image.asset('assets/categorys/saladas.png')),
+                    Text('Saladas'),
                   ],
                 )),
           ),
           //
           // Categoria Vazia
           //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
+          Card(
               elevation: 0,
               color: Color.fromRGBO(235, 230, 210, 1),
             ),
-          ),
           //
           // Categoria Vazia
           //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
+          Card(
               elevation: 0,
               color: Color.fromRGBO(235, 230, 210, 1),
             ),
-          ),
           //
           // Categoria Pães
           //
@@ -288,7 +237,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -297,7 +246,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/paes.png'))
+                    Expanded(child: Image.asset('assets/categorys/paes.png')),
+                    Text('Pães'),
                   ],
                 )),
           ),
@@ -310,7 +260,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -319,7 +269,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/sopas.png'))
+                    Expanded(child: Image.asset('assets/categorys/sopas.png')),
+                    Text('Sopas'),
                   ],
                 )),
           ),
@@ -332,7 +283,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -341,7 +292,8 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [
-                    Expanded(child: Image.asset('assets/categorys/frangos.png'))
+                    Expanded(child: Image.asset('assets/categorys/frangos.png')),
+                    Text('Frangos'),
                   ],
                 )),
           ),
@@ -354,7 +306,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      ConfigPage(), // alterar a pagina de destino
+                      RecipePage(), // alterar a pagina de destino
                 ),
               );
             },
@@ -362,27 +314,19 @@ class Categorys extends StatelessWidget {
                 elevation: 0,
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
-                  children: [Expanded(child: Image.asset('assets/icon.png'))],
-                )),
+                  children: [Expanded(child: Image.asset('assets/icon.png')),
+                  Text('Outros'),
+                  ],
+                )
+              ),
           ),
           //
           // Categoria Vazia
           //
-          GestureDetector(
-            // onTap: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //       builder: (context) =>
-            //           ConfigPage(), // alterar a pagina de destino
-            //     ),
-            //   );
-            // },
-            child: Card(
+          Card(
               elevation: 0,
               color: Color.fromRGBO(235, 230, 210, 1),
             ),
-          ),
         ],
       ),
     );

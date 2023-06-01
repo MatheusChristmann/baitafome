@@ -21,10 +21,11 @@ void main() async {
       center: true,
       size: Size(800, 600),
       minimumSize: Size(800, 600));
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
+    windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    }
+  );
 
   runApp(const BaitaFomeApp());
 }
