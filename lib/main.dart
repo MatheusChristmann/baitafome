@@ -19,8 +19,8 @@ void main() async {
   WindowOptions windowOptions = WindowOptions(
       windowButtonVisibility: true,
       center: true,
-      size: Size(800, 600),
-      minimumSize: Size(800, 600));
+      size: Size(850, 600),
+      minimumSize: Size(850, 600));
     windowManager.waitUntilReadyToShow(windowOptions, () async {
       await windowManager.show();
       await windowManager.focus();

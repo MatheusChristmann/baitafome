@@ -33,7 +33,11 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                     Expanded(child: Image.asset('assets/categorys/sobremesas.png')),
-                    Text('Sobremesas'),
+                    Text('Sobremesas',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )
               ),
@@ -48,7 +52,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(),
                 ),
               );
             },
@@ -58,7 +62,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/bolos.png')),
-                    Text('Bolos'),
+                    Text('Bolos',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -71,7 +79,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(), 
                 ),
               );
             },
@@ -81,20 +89,23 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/carnes.png')),
-                    Text('Carnes'),
+                    Text('Carnes',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
-          //
+
           // Categoria Peixes
-          //
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(), 
                 ),
               );
             },
@@ -104,7 +115,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/peixes.png')),
-                    Text('Peixes'),
+                    Text('Peixes',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -131,7 +146,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(), 
                 ),
               );
             },
@@ -141,7 +156,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/tortas.png')),
-                    Text('Tortas'),
+                    Text('Tortas',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -154,7 +173,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(), 
                 ),
               );
             },
@@ -164,7 +183,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/massas.png')),
-                    Text('Massas'),
+                    Text('Massas',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -177,7 +200,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(), 
                 ),
               );
             },
@@ -187,7 +210,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/sucos.png')),
-                    Text('Sucos'),
+                    Text('Sucos',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -200,7 +227,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(),
                 ),
               );
             },
@@ -210,7 +237,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/saladas.png')),
-                    Text('Saladas'),
+                    Text('Saladas',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -247,7 +278,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/paes.png')),
-                    Text('Pães'),
+                    Text('Pães',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -270,7 +305,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/sopas.png')),
-                    Text('Sopas'),
+                    Text('Sopas',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -293,7 +332,11 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/frangos.png')),
-                    Text('Frangos'),
+                    Text('Frangos',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )),
           ),
@@ -315,7 +358,11 @@ class Categorys extends StatelessWidget {
                 color: Color.fromRGBO(235, 230, 210, 1),
                 child: Column(
                   children: [Expanded(child: Image.asset('assets/icon.png')),
-                  Text('Outros'),
+                  Text('Outros',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ],
                 )
               ),
