@@ -47,28 +47,12 @@ class _MainPageState extends State<MainPage> {
                 return [
                   PopupMenuItem<int>(
                     value: 0,
-                    child: Text("Minha Conta"),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 1,
-                    child: Text("Opções"),
-                  ),
-                  PopupMenuItem<int>(
-                    value: 2,
-                    child: Text("Sair"),
-                  ),
+                    child: Text("Todas as Receitas"),
+                  ),                
                 ];
               },
               offset: Offset(0, 64),
-              onSelected: (value) {
-                if (value == 0) {
-                  print("opção de valor 0");
-                } else if (value == 1) {
-                  print("opção de valor 1");
-                } else if (value == 2) {
-                  print("opção de valor 2");
-                }
-              })
+          )
         ],
       ),
       body: Categorys(),
