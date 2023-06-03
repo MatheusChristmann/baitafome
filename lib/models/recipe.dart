@@ -9,15 +9,14 @@ class Recipe {
 
   String? description;
 
-    String? ingredients;
+  String? ingredients;
 
-  @ForeignKey(entity: Type, parentColumns: ['id'], childColumns: ['typeId'])
   int? type;  
 
   Recipe({
     this.name, 
     this.description, 
-    this.ingredients, 
-    this.type
+    this.type,
+    this.ingredients,     
   });
 }

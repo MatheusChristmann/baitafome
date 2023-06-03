@@ -3,7 +3,7 @@ import 'package:baitafome/models/recipe.dart';
 
 @dao
 abstract class RecipeDao {
-  @Query('SELECT * FROM recipe')
+  @Query('SELECT * FROM recipe ORDER BY recipe.id')
   Future<List<Recipe>> findAllRecipes();
 
   @Query('SELECT name FROM recipe')
@@ -14,6 +14,9 @@ abstract class RecipeDao {
 
   @Query('SELECT * FROM recipe WHERE name = :name')
   Future<Recipe?> findRecipeByName(String name);
+
+  @Query('SELECT * FROM recipe WHERE type = :type')
+  Future<Recipe?> findRecipeByType(int type);
 
   @insert
   Future<void> insertRecipe(Recipe recipe);

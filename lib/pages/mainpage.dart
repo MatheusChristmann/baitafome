@@ -3,6 +3,7 @@ import 'package:baitafome/pages/configpage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:baitafome/pages/recipes.dart';
 
 import 'categorys.dart';
 
@@ -41,17 +42,27 @@ class _MainPageState extends State<MainPage> {
         centerTitle: true,
         actions: <Widget>[          
           PopupMenuButton(
-              color: Color.fromRGBO(246, 247, 241, 1),
-              icon: Icon(Icons.more_vert, color: Colors.black),
-              itemBuilder: (context) {
-                return [
-                  PopupMenuItem<int>(
-                    value: 0,
-                    child: Text("Todas as Receitas"),
-                  ),                
-                ];
-              },
-              offset: Offset(0, 64),
+            color: Color.fromRGBO(246, 247, 241, 1),
+            icon: Icon(Icons.more_vert, color: Colors.black),
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem<int>(
+                  value: 0,
+                  child: Text("Todas as Receitas"),              
+                ),                                  
+              ];
+            },
+            offset: Offset(0, 64),
+            onSelected: (value){
+              if (value == 0) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RecipePage(recipeId: 0), // alterar a pagina de destino
+                  ),
+                );
+              }
+            },
           )
         ],
       ),

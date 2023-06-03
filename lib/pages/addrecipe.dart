@@ -1,8 +1,6 @@
+import 'package:baitafome/models/recipe.dart';
 import 'package:flutter/material.dart';
-import 'package:baitafome/dao/type_dao.dart';
 import 'package:baitafome/models/type.dart';
-import 'package:baitafome/main.dart';
-import 'package:baitafome/pages/mainpage.dart';
 import '../dao/database.dart';
 import 'package:flutter/services.dart';
 
@@ -12,13 +10,11 @@ class AddRecipeDialog extends StatefulWidget {
 }
 
 class _AddRecipeDialogState extends State<AddRecipeDialog> {
-  List<Type>? allowedTypes;
-
   final TextEditingController nameController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController ingredientsController = TextEditingController();
 
-// Objeto Type selecionado
+  List<Type>? allowedTypes;
   Type? selectedType;
 
   @override
@@ -27,12 +23,44 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
     loadAllowedTypes();
   }
 
+  // CARREGA TYPE DO BANCO DE DADOS
   Future<void> loadAllowedTypes() async {
     final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
     final typeDao = database.typeDao;
     allowedTypes = await typeDao.findAllTypes();
     setState(() {});
   }
+
+  //GRAVAR A RECEITA NO BANCO DE DADOS
+  void saveRecipe() async{
+    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+    final RecipeDao = database.recipeDao;
+
+    final recipe = Recipe(name: nameController.text, description: descriptionController.text,  type: selectedType?.id, ingredients: ingredientsController.text);
+    await RecipeDao.insertRecipe(recipe);
+  }
+
+  // VALIDAR SE A RECEITA TEM AS INFORMAÇÕES NECESSÁRIAS
+  void validateRecipe(){
+    if (selectedType != null && descriptionController.text.isNotEmpty && nameController.text.isNotEmpty) { 
+      saveRecipe();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Receita adicionada com sucesso!'),
+          backgroundColor: Colors.green,
+        ),
+      );
+    }
+    else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Opa, parece que você esqueceu de informar alguns campos! A receita não foi salva!'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -138,14 +166,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
         TextButton(
           child: Text('Salvar'),
           onPressed: () {
-            if (selectedType != null && descriptionController.text.isNotEmpty && nameController.text.isNotEmpty) { 
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Receita adicionada com sucesso.'),
-                  backgroundColor: Colors.green,
-                ),
-              );
-            } 
+            validateRecipe();
             Navigator.of(context).pop();
           },
         ),

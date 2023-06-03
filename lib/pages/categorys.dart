@@ -1,4 +1,4 @@
-import 'package:baitafome/pages/recipe.dart';
+import 'package:baitafome/pages/recipes.dart';
 import 'package:flutter/material.dart';
 
 class Categorys extends StatelessWidget {
@@ -23,7 +23,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => RecipePage(), // alterar a pagina de destino
+                  builder: (context) => RecipePage(recipeId: 1), // alterar a pagina de destino
                 ),
               );
             },
@@ -52,7 +52,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(),
+                      RecipePage(recipeId: 2,),
                 ),
               );
             },
@@ -79,7 +79,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), 
+                  RecipePage(recipeId: 3),
                 ),
               );
             },
@@ -105,7 +105,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), 
+                      RecipePage(recipeId: 4), 
                 ),
               );
             },
@@ -146,7 +146,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), 
+                      RecipePage(recipeId: 5), 
                 ),
               );
             },
@@ -173,7 +173,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), 
+                      RecipePage(recipeId: 6), 
                 ),
               );
             },
@@ -200,7 +200,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), 
+                      RecipePage(recipeId: 7), 
                 ),
               );
             },
@@ -227,7 +227,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(),
+                      RecipePage(recipeId: 8),
                 ),
               );
             },
@@ -268,7 +268,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(recipeId: 9), // alterar a pagina de destino
                 ),
               );
             },
@@ -295,7 +295,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(recipeId: 10,),
                 ),
               );
             },
@@ -322,7 +322,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(recipeId: 11), // alterar a pagina de destino
                 ),
               );
             },
@@ -349,7 +349,7 @@ class Categorys extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) =>
-                      RecipePage(), // alterar a pagina de destino
+                      RecipePage(recipeId: 12), // alterar a pagina de destino
                 ),
               );
             },

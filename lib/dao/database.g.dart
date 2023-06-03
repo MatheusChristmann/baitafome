@@ -190,12 +190,12 @@ class _$RecipeDao extends RecipeDao {
 
   @override
   Future<List<Recipe>> findAllRecipes() async {
-    return _queryAdapter.queryList('SELECT * FROM recipe',
+    return _queryAdapter.queryList('SELECT * FROM recipe ORDER BY recipe.id',
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
-            ingredients: row['ingredients'] as String?,
-            type: row['type'] as int?));
+            type: row['type'] as int?,
+            ingredients: row['ingredients'] as String?));
   }
 
   @override
@@ -210,8 +210,8 @@ class _$RecipeDao extends RecipeDao {
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
-            ingredients: row['ingredients'] as String?,
-            type: row['type'] as int?),
+            type: row['type'] as int?,
+            ingredients: row['ingredients'] as String?),
         arguments: [id]);
   }
 
@@ -221,9 +221,20 @@ class _$RecipeDao extends RecipeDao {
         mapper: (Map<String, Object?> row) => Recipe(
             name: row['name'] as String?,
             description: row['description'] as String?,
-            ingredients: row['ingredients'] as String?,
-            type: row['type'] as int?),
+            type: row['type'] as int?,
+            ingredients: row['ingredients'] as String?),
         arguments: [name]);
+  }
+
+  @override
+  Future<Recipe?> findRecipeByType(int type) async {
+    return _queryAdapter.query('SELECT * FROM recipe WHERE type = ?1',
+        mapper: (Map<String, Object?> row) => Recipe(
+            name: row['name'] as String?,
+            description: row['description'] as String?,
+            type: row['type'] as int?,
+            ingredients: row['ingredients'] as String?),
+        arguments: [type]);
   }
 
   @override
