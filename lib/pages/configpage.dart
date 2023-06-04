@@ -13,7 +13,7 @@ class _ConfigPageState extends State<ConfigPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(246, 247, 241, 1),                        
+        backgroundColor: Color.fromRGBO(223, 138, 84, 1),                        
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){

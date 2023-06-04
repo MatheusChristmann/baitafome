@@ -1,6 +1,5 @@
 import 'package:baitafome/pages/addrecipe.dart';
 import 'package:baitafome/pages/configpage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:baitafome/pages/recipes.dart';
@@ -19,7 +18,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(246, 247, 241, 1),
+        backgroundColor: Color.fromRGBO(223, 138, 84, 1),
         leading: IconButton(
           icon: Icon(Icons.settings),
           onPressed: () {
@@ -58,7 +57,7 @@ class _MainPageState extends State<MainPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => RecipePage(recipeId: 0), // alterar a pagina de destino
+                    builder: (context) => RecipePage(typeId: 0), // alterar a pagina de destino
                   ),
                 );
               }

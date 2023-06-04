@@ -13,7 +13,8 @@ class Recipe {
 
   int? type;  
 
-  Recipe({
+  Recipe({    
+    this.id,
     this.name, 
     this.description, 
     this.type,

@@ -192,6 +192,7 @@ class _$RecipeDao extends RecipeDao {
   Future<List<Recipe>> findAllRecipes() async {
     return _queryAdapter.queryList('SELECT * FROM recipe ORDER BY recipe.id',
         mapper: (Map<String, Object?> row) => Recipe(
+            id: row['id'] as int?,
             name: row['name'] as String?,
             description: row['description'] as String?,
             type: row['type'] as int?,
@@ -199,15 +200,10 @@ class _$RecipeDao extends RecipeDao {
   }
 
   @override
-  Future<List<String>> findAllRecipesName() async {
-    return _queryAdapter.queryList('SELECT name FROM recipe',
-        mapper: (Map<String, Object?> row) => row.values.first as String);
-  }
-
-  @override
   Future<Recipe?> findRecipeById(int id) async {
     return _queryAdapter.query('SELECT * FROM recipe WHERE id = ?1',
         mapper: (Map<String, Object?> row) => Recipe(
+            id: row['id'] as int?,
             name: row['name'] as String?,
             description: row['description'] as String?,
             type: row['type'] as int?,
@@ -216,20 +212,10 @@ class _$RecipeDao extends RecipeDao {
   }
 
   @override
-  Future<Recipe?> findRecipeByName(String name) async {
-    return _queryAdapter.query('SELECT * FROM recipe WHERE name = ?1',
+  Future<List<Recipe>> findRecipeByType(int type) async {
+    return _queryAdapter.queryList('SELECT * FROM recipe WHERE type = ?1',
         mapper: (Map<String, Object?> row) => Recipe(
-            name: row['name'] as String?,
-            description: row['description'] as String?,
-            type: row['type'] as int?,
-            ingredients: row['ingredients'] as String?),
-        arguments: [name]);
-  }
-
-  @override
-  Future<Recipe?> findRecipeByType(int type) async {
-    return _queryAdapter.query('SELECT * FROM recipe WHERE type = ?1',
-        mapper: (Map<String, Object?> row) => Recipe(
+            id: row['id'] as int?,
             name: row['name'] as String?,
             description: row['description'] as String?,
             type: row['type'] as int?,
