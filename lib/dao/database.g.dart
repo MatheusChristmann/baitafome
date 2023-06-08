@@ -137,9 +137,10 @@ class _$TypeDao extends TypeDao {
   }
 
   @override
-  Future<List<String>> findAllDescriptionNames() async {
-    return _queryAdapter.queryList('SELECT description FROM Type',
-        mapper: (Map<String, Object?> row) => row.values.first as String);
+  Future<List<String>> findAllDescriptionType(int id) async {
+    return _queryAdapter.queryList('SELECT description FROM Type WHERE id = ?1',
+        mapper: (Map<String, Object?> row) => row.values.first as String,
+        arguments: [id]);
   }
 
   @override
@@ -171,6 +172,17 @@ class _$RecipeDao extends RecipeDao {
                   'ingredients': item.ingredients,
                   'type': item.type
                 }),
+        _recipeUpdateAdapter = UpdateAdapter(
+            database,
+            'Recipe',
+            ['id'],
+            (Recipe item) => <String, Object?>{
+                  'id': item.id,
+                  'name': item.name,
+                  'description': item.description,
+                  'ingredients': item.ingredients,
+                  'type': item.type
+                }),
         _recipeDeletionAdapter = DeletionAdapter(
             database,
             'Recipe',
@@ -190,6 +202,8 @@ class _$RecipeDao extends RecipeDao {
   final QueryAdapter _queryAdapter;
 
   final InsertionAdapter<Recipe> _recipeInsertionAdapter;
+
+  final UpdateAdapter<Recipe> _recipeUpdateAdapter;
 
   final DeletionAdapter<Recipe> _recipeDeletionAdapter;
 
@@ -231,6 +245,11 @@ class _$RecipeDao extends RecipeDao {
   @override
   Future<void> insertRecipe(Recipe recipe) async {
     await _recipeInsertionAdapter.insert(recipe, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> updateRecipe(Recipe recipe) async {
+    await _recipeUpdateAdapter.update(recipe, OnConflictStrategy.abort);
   }
 
   @override

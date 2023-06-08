@@ -17,4 +17,7 @@ abstract class RecipeDao {
 
   @delete
   Future<void>deleteRecipe(Recipe recipe);
+
+  @update
+  Future<void>updateRecipe(Recipe recipe);
 }

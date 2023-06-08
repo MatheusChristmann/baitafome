@@ -22,28 +22,30 @@ class _RecipePageState extends State<RecipePage> {
   }
 
   void viewRecipe(BuildContext context, int recipeId) async {
-    String result = await showDialog(
+    String? result = await showDialog(
       context: context,
       builder: (BuildContext context) {
         return ViewRecipeDialog(recipeId: recipeId);
       },    
     );
 
-    if (result == 'E'){
+    if (result == 'D'){
       deleteRecipe(recipeId);      
+    }
+    else if (result == 'U'){
+      await loadAllowedRecipes(widget.typeId);
     }
   }
 
-  void deleteRecipe(int idReceita) async {
+  void deleteRecipe(int idRecipe) async {
     final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
     final recipeDao = database.recipeDao;
 
-    Recipe? recipe = await recipeDao.findRecipeById(idReceita);
+    Recipe? recipe = await recipeDao.findRecipeById(idRecipe);
     recipeDao.deleteRecipe(recipe!);
 
     await loadAllowedRecipes(widget.typeId);
   }
-
 
   // CARREGA AS RECEITAS DO BANCO DE DADOS
   Future<void> loadAllowedRecipes(int recipeId) async {

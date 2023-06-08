@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 
 class ViewRecipeDialog extends StatefulWidget {
   final int recipeId;
-  String? op;
 
   ViewRecipeDialog({required this.recipeId});
 
@@ -31,6 +30,21 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
     loadRecipeDetails(widget.recipeId);
   }
 
+  void updateRecipe(int idRecipe) async {
+    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+    final recipeDao = database.recipeDao;
+
+    Recipe? recipe = await recipeDao.findRecipeById(idRecipe);
+
+    recipe!.name = nameController.text;
+    recipe.description = descriptionController.text;
+    recipe.ingredients = ingredientsController.text;
+    recipe.type = selectedType?.id;
+
+    recipeDao.updateRecipe(recipe);
+    Navigator.of(context).pop('U');
+  }
+
   // CARREGA TIPOS DO BANCO DE DADOS
   Future<void> loadAllowedTypes() async {
     final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
@@ -47,56 +61,12 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
     selectedType = allowedTypes?.firstWhere((type) => type.id == recipe?.type);
 
     idController.text = recipe?.id.toString() ?? '';
-    nameController.text = recipe?.description ?? '';
+    nameController.text = recipe?.name ?? '';
     descriptionController.text = recipe?.description ?? '';
     ingredientsController.text = recipe?.ingredients ?? '';    
 
     setState(() {});
   }
-
-  // DELETAR RECEITA DO BANCO DE DADOS
-  void deleteRecipe(int idReceita) async {
-    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
-    final recipeDao = database.recipeDao;
-
-    Recipe? recipe = await recipeDao.findRecipeById(idReceita);
-    recipeDao.deleteRecipe(recipe!);
-  }
-
-  // SALVAR RECEITA NO BANCO DE DADOS
-  /*void saveRecipe() async {
-    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
-    final recipeDao = database.recipeDao;
-
-    final recipe = Recipe(
-      name: nameController.text,
-      description: descriptionController.text,
-      type: selectedType?.id,
-      ingredients: ingredientsController.text,
-    );
-    await recipeDao.insertRecipe(recipe);
-  }*/
-
-  // VALIDAR SE A RECEITA TEM AS INFORMAÇÕES NECESSÁRIAS
-  /*void validateRecipe() {
-    if (selectedType != null && descriptionController.text.isNotEmpty && nameController.text.isNotEmpty) {
-      saveRecipe();
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Receita adicionada com sucesso!'),
-          backgroundColor: Colors.green,
-        ),
-      );
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Ops, parece que você esqueceu de preencher alguns campos! A receita não foi salva!'),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
-  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -217,7 +187,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
               ),
             ),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(); 
           },
         ),
         TextButton(
@@ -230,8 +200,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
               ),
             ),
           onPressed: () {
-            //validateRecipe();
-            Navigator.of(context).pop();
+            updateRecipe(widget.recipeId);            
           },
         ),
         TextButton(
@@ -244,8 +213,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
               ),
             ),
           onPressed: () {
-            deleteRecipe(widget.recipeId);
-            Navigator.of(context).pop('E');
+            Navigator.of(context).pop('D');// D - Delete
           },
         ),
       ],
