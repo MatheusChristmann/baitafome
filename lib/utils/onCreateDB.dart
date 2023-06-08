@@ -2,11 +2,13 @@ import 'package:baitafome/dao/database.dart';
 import 'package:baitafome/models/type.dart';
 import 'package:baitafome/dao/type_dao.dart';
 
-void generateTypes() async {
-  //generatin database instance
-  final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+void onCreateDB() {
+  // GERA OS TIPOS DE RECEITAS NO BANCO DE DADOS
+  generatedTypes(); 
+}
 
-  //generatin types for the app
+void generatedTypes() async {
+  final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
   final typeDao = database.typeDao;
   final type1 = Type(id: 1, description: 'Sobremesas');
   final type2 = Type(id: 2, description: 'Bolos');

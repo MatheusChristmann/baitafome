@@ -22,8 +22,7 @@ class Categorys extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => RecipePage(typeId: 1), // alterar a pagina de destino
+                MaterialPageRoute(builder: (context) => RecipePage(typeId: 1), // alterar a pagina de destino
                 ),
               );
             },
@@ -50,9 +49,7 @@ class Categorys extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 2,),
+                MaterialPageRoute(builder: (context) => RecipePage(typeId: 2,),
                 ),
               );
             },
@@ -78,8 +75,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                  RecipePage(typeId: 3),
+                  builder: (context) => RecipePage(typeId: 3),
                 ),
               );
             },
@@ -104,8 +100,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 4), 
+                  builder: (context) => RecipePage(typeId: 4), 
                 ),
               );
             },
@@ -145,8 +140,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 5), 
+                  builder: (context) => RecipePage(typeId: 5), 
                 ),
               );
             },
@@ -172,8 +166,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 6), 
+                  builder: (context) => RecipePage(typeId: 6), 
                 ),
               );
             },
@@ -199,8 +192,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 7), 
+                  builder: (context) => RecipePage(typeId: 7), 
                 ),
               );
             },
@@ -226,8 +218,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 8),
+                  builder: (context) => RecipePage(typeId: 8),
                 ),
               );
             },
@@ -267,8 +258,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 9), // alterar a pagina de destino
+                  builder: (context) => RecipePage(typeId: 9), // alterar a pagina de destino
                 ),
               );
             },
@@ -294,8 +284,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 10,),
+                  builder: (context) => RecipePage(typeId: 10,),
                 ),
               );
             },
@@ -321,8 +310,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 11), // alterar a pagina de destino
+                  builder: (context) => RecipePage(typeId: 11), // alterar a pagina de destino
                 ),
               );
             },
@@ -348,8 +336,7 @@ class Categorys extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      RecipePage(typeId: 12), // alterar a pagina de destino
+                  builder: (context) => RecipePage(typeId: 12), // alterar a pagina de destino
                 ),
               );
             },

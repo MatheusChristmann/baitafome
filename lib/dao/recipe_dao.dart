@@ -13,5 +13,8 @@ abstract class RecipeDao {
   Future<List<Recipe>> findRecipeByType(int type);
 
   @insert
-  Future<void> insertRecipe(Recipe recipe);
+  Future<void>insertRecipe(Recipe recipe);
+
+  @delete
+  Future<void>deleteRecipe(Recipe recipe);
 }

@@ -158,13 +158,27 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
       ),
       actions: [
         TextButton(
-          child: Text('Sair'),
+          child: Text(
+              'Sair',
+              style: TextStyle(
+                color: Colors.orange,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           onPressed: (){
             Navigator.of(context).pop();
           },
         ),
         TextButton(
-          child: Text('Salvar'),
+          child: Text(
+              'Salvar',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           onPressed: () {
             validateRecipe();
             Navigator.of(context).pop();

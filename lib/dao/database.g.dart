@@ -151,14 +151,6 @@ class _$TypeDao extends TypeDao {
   }
 
   @override
-  Future<Type?> findTypeByName(String description) async {
-    return _queryAdapter.query('SELECT * FROM Type WHERE description = ?1',
-        mapper: (Map<String, Object?> row) => Type(
-            id: row['id'] as int, description: row['description'] as String),
-        arguments: [description]);
-  }
-
-  @override
   Future<void> insertType(Type type) async {
     await _typeInsertionAdapter.insert(type, OnConflictStrategy.abort);
   }
@@ -178,6 +170,17 @@ class _$RecipeDao extends RecipeDao {
                   'description': item.description,
                   'ingredients': item.ingredients,
                   'type': item.type
+                }),
+        _recipeDeletionAdapter = DeletionAdapter(
+            database,
+            'Recipe',
+            ['id'],
+            (Recipe item) => <String, Object?>{
+                  'id': item.id,
+                  'name': item.name,
+                  'description': item.description,
+                  'ingredients': item.ingredients,
+                  'type': item.type
                 });
 
   final sqflite.DatabaseExecutor database;
@@ -187,6 +190,8 @@ class _$RecipeDao extends RecipeDao {
   final QueryAdapter _queryAdapter;
 
   final InsertionAdapter<Recipe> _recipeInsertionAdapter;
+
+  final DeletionAdapter<Recipe> _recipeDeletionAdapter;
 
   @override
   Future<List<Recipe>> findAllRecipes() async {
@@ -226,5 +231,10 @@ class _$RecipeDao extends RecipeDao {
   @override
   Future<void> insertRecipe(Recipe recipe) async {
     await _recipeInsertionAdapter.insert(recipe, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> deleteRecipe(Recipe recipe) async {
+    await _recipeDeletionAdapter.delete(recipe);
   }
 }

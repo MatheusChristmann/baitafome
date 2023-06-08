@@ -3,7 +3,6 @@ import 'package:baitafome/pages/viewRecipe.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../dao/database.dart';
-import 'package:baitafome/pages/viewRecipe.dart';
 
 class RecipePage extends StatefulWidget {
   final int typeId;
@@ -22,6 +21,30 @@ class _RecipePageState extends State<RecipePage> {
     loadAllowedRecipes(widget.typeId);
   }
 
+  void viewRecipe(BuildContext context, int recipeId) async {
+    String result = await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return ViewRecipeDialog(recipeId: recipeId);
+      },    
+    );
+
+    if (result == 'E'){
+      deleteRecipe(recipeId);      
+    }
+  }
+
+  void deleteRecipe(int idReceita) async {
+    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+    final recipeDao = database.recipeDao;
+
+    Recipe? recipe = await recipeDao.findRecipeById(idReceita);
+    recipeDao.deleteRecipe(recipe!);
+
+    await loadAllowedRecipes(widget.typeId);
+  }
+
+
   // CARREGA AS RECEITAS DO BANCO DE DADOS
   Future<void> loadAllowedRecipes(int recipeId) async {
     final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
@@ -35,6 +58,7 @@ class _RecipePageState extends State<RecipePage> {
       recipes = await recipeDao.findRecipeByType(recipeId);
     }
 
+    recipeList = []; 
     setState((){
       recipeList = recipes;      
     });

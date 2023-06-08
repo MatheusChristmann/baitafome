@@ -6,8 +6,9 @@ import 'package:flutter/services.dart';
 
 class ViewRecipeDialog extends StatefulWidget {
   final int recipeId;
+  String? op;
 
-  const ViewRecipeDialog({required this.recipeId});
+  ViewRecipeDialog({required this.recipeId});
 
   @override
   _ViewRecipeDialogState createState() => _ViewRecipeDialogState();
@@ -43,7 +44,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
     final recipeDao = database.recipeDao;    
 
     recipe = await recipeDao.findRecipeById(widget.recipeId);
-    selectedType = allowedTypes?.firstWhere((type) => type.id == recipe!.type);
+    selectedType = allowedTypes?.firstWhere((type) => type.id == recipe?.type);
 
     idController.text = recipe?.id.toString() ?? '';
     nameController.text = recipe?.description ?? '';
@@ -51,6 +52,15 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
     ingredientsController.text = recipe?.ingredients ?? '';    
 
     setState(() {});
+  }
+
+  // DELETAR RECEITA DO BANCO DE DADOS
+  void deleteRecipe(int idReceita) async {
+    final database = await $FloorAppDatabase.databaseBuilder('baitafome.db').build();
+    final recipeDao = database.recipeDao;
+
+    Recipe? recipe = await recipeDao.findRecipeById(idReceita);
+    recipeDao.deleteRecipe(recipe!);
   }
 
   // SALVAR RECEITA NO BANCO DE DADOS
@@ -198,22 +208,44 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
       ),
       actions: [
         TextButton(
-          child: Text('Sair'),
+          child: Text(
+              'Sair',
+              style: TextStyle(
+                color: Colors.orange,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         TextButton(
-          child: Text('Salvar'),
+          child: Text(
+              'Salvar',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           onPressed: () {
             //validateRecipe();
             Navigator.of(context).pop();
           },
         ),
         TextButton(
-          child: Text('Excluir'),
+          child: Text(
+              'Excluir',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 21,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           onPressed: () {
-            Navigator.of(context).pop();
+            deleteRecipe(widget.recipeId);
+            Navigator.of(context).pop('E');
           },
         ),
       ],
@@ -221,11 +253,5 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
   }
 }
 
-void viewRecipe(BuildContext context, int recipeId) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return ViewRecipeDialog(recipeId: recipeId);
-    },
-  );
-}
+
+

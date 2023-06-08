@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:floor/floor.dart';
 import 'package:baitafome/dao/database.dart';
-import 'package:baitafome/utils/generatetypes.dart';
+import 'package:baitafome/utils/onCreateDB.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +12,7 @@ void main() async {
 
   final callback = Callback(
     onCreate: (database, version) {
-      generateTypes();
+      onCreateDB();
     },
   );
 
