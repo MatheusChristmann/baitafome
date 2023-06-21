@@ -9,6 +9,15 @@ class AddRecipeDialog extends StatefulWidget {
   _AddRecipeDialogState createState() => _AddRecipeDialogState();
 }
 
+void addRecipe(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AddRecipeDialog();
+    },
+  );
+}
+
 class _AddRecipeDialogState extends State<AddRecipeDialog> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
@@ -189,11 +198,4 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
   }
 }
 
-void addRecipe(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AddRecipeDialog();
-    },
-  );
-}
+
