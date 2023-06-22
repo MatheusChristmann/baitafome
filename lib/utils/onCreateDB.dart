@@ -1,6 +1,5 @@
 import 'package:baitafome/dao/database.dart';
 import 'package:baitafome/models/type.dart';
-import 'package:baitafome/dao/type_dao.dart';
 
 void onCreateDB() {
   // GERA OS TIPOS DE RECEITAS NO BANCO DE DADOS
