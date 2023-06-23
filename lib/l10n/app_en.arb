@@ -1,8 +1,14 @@
 {
    "title_main_page": "My Recipes",
-   "tooltip_settings": "Settings",
    "tooltip_search_for_recipe": "Search for Recipe",
    "tooltip_add_recipe": "Add Recipe",
-
-   "tooltip_return_to_mainmenu": "Return to Main Screen"
+   "tooltip_return_to_mainmenu": "Return to Main Screen",
+   
+   "addrecipe_recipe_added": "Receita adicionada com sucesso!",
+   "addrecipe_recipe_not_added": "Opa, parece que você esqueceu de informar alguns campos! A receita não foi salva!",
+   "addrecipe_enter_recipe_information": "Digite as informações da Receita:",
+   "addrecipe_label_name": "Nome",
+   "addrecipe_label_description": "Descrição",
+   "addrecipe_label_typerecipe": "Tipo de Receita",
+   "addrecipe_label_ingredients": "Ingredientes / Modo de Preparo"
 }

@@ -1,4 +1,3 @@
-import 'package:baitafome/dao/database.dart';
 import 'package:floor/floor.dart';
 import 'package:baitafome/models/type.dart';
 

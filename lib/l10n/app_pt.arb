@@ -1,9 +1,32 @@
 {   
    "title_main_page": "Minhas Receitas",
-   "tooltip_settings": "Configurações",
    "tooltip_add_recipe": "Adicionar Receita",
-
    "title_recipe_page": "Receitas",
+   "tooltip_return_to_mainmenu": "Voltar a Tela Principal",
 
-   "tooltip_return_to_mainmenu": "Voltar a Tela Principal"
+   "addrecipe_recipe_added": "Receita adicionada com sucesso!",
+   "addrecipe_recipe_not_added": "Opa, parece que você esqueceu de informar alguns campos! A receita não foi salva!",
+   "addrecipe_enter_recipe_information": "Digite as informações da Receita:",
+   "addrecipe_label_name": "Nome",
+   "addrecipe_label_description": "Descrição",
+   "addrecipe_label_typerecipe": "Tipo de Receita",
+   "addrecipe_label_ingredients": "Ingredientes / Modo de Preparo",
+   "addrecipe_hint_type_recipe": "Escolha o Tipo de Receita",
+
+   "button_save": "Salvar",
+   "button_delete": "Excluir",  
+   "button_exit": "Sair",
+
+   "categorys_label_sobremesas": "Sobremesas",
+   "categorys_label_bolos": "Bolos",
+   "categorys_label_carnes": "Carnes",
+   "categorys_label_peixes": "Peixes",
+   "categorys_label_tortas": "Tortas",
+   "categorys_label_massas": "Massas",
+   "categorys_label_sucos": "Sucos",
+   "categorys_label_saladas": "Saladas",
+   "categorys_label_paes": "Pães",
+   "categorys_label_sopas": "Sopas",
+   "categorys_label_frangos": "Frangos",
+   "categorys_label_outros": "Outros"
 }
