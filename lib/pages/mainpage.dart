@@ -25,31 +25,29 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         centerTitle: true,
+
         actions: <Widget>[          
           PopupMenuButton(
             color: Color.fromRGBO(246, 247, 241, 1),
-            icon: Icon(Icons.more_vert, color: Colors.black),
+            icon: Icon(Icons.list_alt, color: Colors.black),
             itemBuilder: (context) {
               return [
                 PopupMenuItem<int>(
                   value: 0,
                   child: Text("Todas as Receitas"),              
-                ),                                  
+                ),
               ];
             },
             offset: Offset(0, 64),
             onSelected: (value){
               if (value == 0) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => RecipePage(typeId: 0), // alterar a pagina de destino
-                  ),
-                );
+                Navigator.push(context,MaterialPageRoute(builder: (context) => RecipePage(typeId: 0),),);
               }
             },
           )
         ],
+
+        
       ),
       body: Categorys(),
       floatingActionButton: FloatingActionButton(

@@ -118,9 +118,8 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                 ),
               ],
             ),
-
-            SizedBox(height: 20),
             
+            SizedBox(height: 20),
             TextField(
               controller: descriptionController,
               maxLines: 2,
@@ -189,17 +188,19 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
       actions: [
         TextButton(
           child: Text(
-            AppLocalizations.of(context)!.button_exit,
+            AppLocalizations.of(context)!.button_delete,
             style: TextStyle(
-              color: Colors.orange,
+              color: Colors.red,
               fontSize: 21,
               fontWeight: FontWeight.bold,
             ),
           ),
           onPressed: () {
-            Navigator.of(context).pop(); 
+            Navigator.of(context).pop('D');// D - Delete
           },
-        ),
+        ),        
+
+        SizedBox(width: 330,),
 
         TextButton(
           child: Text(
@@ -213,19 +214,19 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
           onPressed: () {
             updateRecipe(widget.recipeId);            
           },
-        ),
+        ),        
 
         TextButton(
           child: Text(
-            AppLocalizations.of(context)!.button_delete,
+            AppLocalizations.of(context)!.button_exit,
             style: TextStyle(
-              color: Colors.red,
+              color: Colors.orange,
               fontSize: 21,
               fontWeight: FontWeight.bold,
             ),
           ),
           onPressed: () {
-            Navigator.of(context).pop('D');// D - Delete
+            Navigator.of(context).pop(); 
           },
         ),
       ],

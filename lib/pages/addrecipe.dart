@@ -166,31 +166,32 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
         ],
       ),
       ),
-      actions: [
+      actions: [        
         TextButton(
           child: Text(
-              AppLocalizations.of(context)!.button_exit,
-              style: TextStyle(
-                color: Colors.orange,
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
+            AppLocalizations.of(context)!.button_save,
+            style: TextStyle(
+              color: Colors.green,
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
             ),
-          onPressed: (){
-            Navigator.of(context).pop();
-          },
-        ),
-        TextButton(
-          child: Text(
-              AppLocalizations.of(context)!.button_save,
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+          ),
           onPressed: () {
             validateRecipe();
+            Navigator.of(context).pop();
+          },
+        ),        
+
+        TextButton(
+          child: Text(
+            AppLocalizations.of(context)!.button_exit,
+            style: TextStyle(
+              color: Colors.orange,
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: (){
             Navigator.of(context).pop();
           },
         ),
