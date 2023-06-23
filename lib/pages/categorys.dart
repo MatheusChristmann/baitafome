@@ -28,7 +28,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/sobremesas.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_sobremesas,
+                  Text(AppLocalizations.of(context)!.label_sobremesas,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -48,7 +48,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/bolos.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_bolos,
+                  Text(AppLocalizations.of(context)!.label_bolos,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -68,7 +68,7 @@ class Categorys extends StatelessWidget {
                 child: Column(
                   children: [
                     Expanded(child: Image.asset('assets/categorys/carnes.png')),
-                    Text(AppLocalizations.of(context)!.categorys_label_carnes,
+                    Text(AppLocalizations.of(context)!.label_carnes,
                       style: TextStyle(
                         fontWeight: FontWeight.bold
                       ),
@@ -87,7 +87,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/peixes.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_peixes,
+                  Text(AppLocalizations.of(context)!.label_peixes,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -116,7 +116,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/tortas.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_tortas,
+                  Text(AppLocalizations.of(context)!.label_tortas,
                      style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -136,7 +136,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/massas.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_massas,
+                  Text(AppLocalizations.of(context)!.label_massas,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -156,7 +156,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/sucos.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_sucos,
+                  Text(AppLocalizations.of(context)!.label_sucos,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -176,7 +176,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/saladas.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_saladas,
+                  Text(AppLocalizations.of(context)!.label_saladas,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -205,7 +205,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/paes.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_paes,
+                  Text(AppLocalizations.of(context)!.label_paes,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -225,7 +225,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/sopas.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_sopas,
+                  Text(AppLocalizations.of(context)!.label_sopas,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -245,7 +245,7 @@ class Categorys extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(child: Image.asset('assets/categorys/frangos.png')),
-                  Text(AppLocalizations.of(context)!.categorys_label_frangos,
+                  Text(AppLocalizations.of(context)!.label_frangos,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),
@@ -264,7 +264,7 @@ class Categorys extends StatelessWidget {
               color: Color.fromRGBO(235, 230, 210, 1),
               child: Column(
                 children: [Expanded(child: Image.asset('assets/icon.png')),
-                Text(AppLocalizations.of(context)!.categorys_label_outros,
+                Text(AppLocalizations.of(context)!.label_outros,
                     style: TextStyle(
                       fontWeight: FontWeight.bold
                     ),

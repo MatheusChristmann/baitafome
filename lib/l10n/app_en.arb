@@ -1,14 +1,35 @@
-{
+{   
    "title_main_page": "My Recipes",
-   "tooltip_search_for_recipe": "Search for Recipe",
    "tooltip_add_recipe": "Add Recipe",
+   "title_recipe_page": "Revenues",
    "tooltip_return_to_mainmenu": "Return to Main Screen",
+
+   "recipe_added": "Recipe added successfully!",
+   "recipe_not_added": "Oops, looks like you forgot to inform some fields! The recipe was not saved!",   
    
-   "addrecipe_recipe_added": "Receita adicionada com sucesso!",
-   "addrecipe_recipe_not_added": "Opa, parece que você esqueceu de informar alguns campos! A receita não foi salva!",
-   "addrecipe_enter_recipe_information": "Digite as informações da Receita:",
-   "addrecipe_label_name": "Nome",
-   "addrecipe_label_description": "Descrição",
-   "addrecipe_label_typerecipe": "Tipo de Receita",
-   "addrecipe_label_ingredients": "Ingredientes / Modo de Preparo"
+   "button_save": "Save",
+   "button_delete": "Delete",  
+   "button_exit": "Exit",
+
+   "label_id": "ID",
+   "label_name": "Name",
+   "label_description": "Description",
+   "label_typerecipe": "Revenue Type",
+   "label_ingredients": "Ingredients / Method of Preparation",
+   "hint_type_recipe": "Choose the Type of Income,",   
+   "recipe_informations": "Revenue Information:",
+   "enter_recipe_information": "Enter Revenue information:",   
+
+   "label_sobremesas": "Desserts",
+   "label_bolos": "Cakes",
+   "label_carnes": "Meat",
+   "label_peixes": "Fish",
+   "label_tortas": "Pies",
+   "label_massas": "Pastas",
+   "label_sucos": "Juices",
+   "label_saladas": "Salads",
+   "label_paes": "Breads",
+   "label_sopas": "Soups",
+   "label_frangos": "Chickens",
+   "label_outros": "Others"
 }

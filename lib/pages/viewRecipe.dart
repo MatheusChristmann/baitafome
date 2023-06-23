@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:baitafome/models/type.dart';
 import '../dao/database.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ViewRecipeDialog extends StatefulWidget {
   final int recipeId;
@@ -71,7 +72,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Informações da Receita:'),
+      title: Text(AppLocalizations.of(context)!.recipe_informations),
       content: Container(
         width: 540,
         height: 600,
@@ -87,7 +88,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                     maxLines: 1,
                     enabled: false,
                     decoration: InputDecoration(
-                      labelText: 'ID',
+                      labelText: AppLocalizations.of(context)!.label_id,
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       counter: SizedBox.shrink(),
                       border: OutlineInputBorder(
@@ -96,7 +97,9 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                     ),                    
                   ),
                 ),
+
                 SizedBox(width: 10),
+
                 Flexible(
                   flex: 4,
                   child: TextField(
@@ -104,7 +107,7 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                     maxLength: 30,
                     maxLines: 1,
                     decoration: InputDecoration(
-                      labelText: 'Nome',
+                      labelText: AppLocalizations.of(context)!.label_name,
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       counter: SizedBox.shrink(),
                       border: OutlineInputBorder(
@@ -115,13 +118,15 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                 ),
               ],
             ),
+
             SizedBox(height: 20),
+            
             TextField(
               controller: descriptionController,
               maxLines: 2,
               maxLength: 100,
               decoration: InputDecoration(
-                labelText: 'Descrição',
+                labelText: AppLocalizations.of(context)!.label_description,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
                 counter: SizedBox.shrink(),
                 border: OutlineInputBorder(
@@ -132,14 +137,16 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                 FilteringTextInputFormatter.deny('\n'),
               ],
             ),
+
             SizedBox(height: 20),
+
             SizedBox(
               width: double.infinity,
               child: DropdownButtonFormField<Type>(
                 isExpanded: true,
                 icon: const Icon(Icons.receipt),
                 decoration: InputDecoration(
-                  labelText: 'Tipo da Receita',
+                  labelText: AppLocalizations.of(context)!.label_typerecipe,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(6),
                   ),
@@ -151,21 +158,23 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
                   });
                 },
                 items: allowedTypes?.map((Type type) {
-                      return DropdownMenuItem<Type>(
-                        value: type,
-                        child: Text(type.description),
-                      );
-                    }).toList() ??
-                    [],
+                  return DropdownMenuItem<Type>(
+                    value: type,
+                     child: Text(type.description),
+                    );
+                  }).toList() ??
+                [],
               ),
             ),
+
             SizedBox(height: 20),
+
             TextField(
               controller: ingredientsController,
               maxLines: 10,
               maxLength: 1000,
               decoration: InputDecoration(
-                labelText: 'Ingredientes / Modo de Preparo',
+                labelText: AppLocalizations.of(context)!.label_ingredients,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
                 counter: SizedBox.shrink(),
                 border: OutlineInputBorder(
@@ -176,42 +185,45 @@ class _ViewRecipeDialogState extends State<ViewRecipeDialog> {
           ],
         ),
       ),
+
       actions: [
         TextButton(
           child: Text(
-              'Sair',
-              style: TextStyle(
-                color: Colors.orange,
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
+            AppLocalizations.of(context)!.button_exit,
+            style: TextStyle(
+              color: Colors.orange,
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
             ),
+          ),
           onPressed: () {
             Navigator.of(context).pop(); 
           },
         ),
+
         TextButton(
           child: Text(
-              'Salvar',
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
+            AppLocalizations.of(context)!.button_save,
+            style: TextStyle(
+              color: Colors.green,
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
             ),
+          ),
           onPressed: () {
             updateRecipe(widget.recipeId);            
           },
         ),
+
         TextButton(
           child: Text(
-              'Excluir',
-              style: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
-                fontWeight: FontWeight.bold,
-              ),
+            AppLocalizations.of(context)!.button_delete,
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+              fontWeight: FontWeight.bold,
             ),
+          ),
           onPressed: () {
             Navigator.of(context).pop('D');// D - Delete
           },

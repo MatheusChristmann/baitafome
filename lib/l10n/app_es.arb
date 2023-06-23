@@ -1,13 +1,35 @@
 {
    "title_main_page": "Mis Recetas",
-   "tooltip_search_for_recipe": "Buscar Receta",
-   "tooltip_add_recipe": "Agregar Receta",
-   "tooltip_return_to_mainmenu": "Volver a la Pantalla Principal",
+   "tooltip_add_recipe": "Añadir Receta",
+   "title_recipe_page": "Ingresos",
+   "tooltip_return_to_mainmenu": "Volver a la pantalla principal",
+
+   "recipe_added": "¡Receta añadida con éxito!",
+   "recipe_not_added": "¡Vaya, parece que se olvidó de informar algunos campos! ¡No se guardó la receta!",   
    
-   "addrecipe_recipe_added": "Receita adicionada com sucesso!",
-   "addrecipe_recipe_not_added": "Opa, parece que você esqueceu de informar alguns campos! A receita não foi salva!",
-   "addrecipe_enter_recipe_information": "Digite as informações da Receita:",
-   "addrecipe_label_name": "Nome",
-   "addrecipe_label_description": "Descrição",
-   "addrecipe_label_typerecipe": "Tipo de Receita",
-   "addrecipe_label_ingredients": "Ingredientes / Modo de Preparo"}
+   "button_save": "Ahorrar",
+   "button_delete": "Borrar",  
+   "button_exit": "Salir",
+
+   "label_id": "ID",
+   "label_name": "Nombre",
+   "label_description": "Descripción",
+   "label_typerecipe": "Tipos de ingresos",
+   "label_ingredients": "Ingredientes / Método de Preparación",
+   "hint_type_recipe": "Elige el Tipo de Ingreso",   
+   "recipe_informations": "Información de ingresos:",
+   "enter_recipe_information": "Ingrese la información de ingresos:",   
+
+   "label_sobremesas": "Postres",
+   "label_bolos": "Pasteles",
+   "label_carnes": "Carne",
+   "label_peixes": "Pez",
+   "label_tortas": "Empanadas",
+   "label_massas": "Pastas",
+   "label_sucos": "Jugos",
+   "label_saladas": "Ensaladas",
+   "label_paes": "Panes",
+   "label_sopas": "Sopas",
+   "label_frangos": "Pollos",
+   "label_outros": "Otros"  
+}

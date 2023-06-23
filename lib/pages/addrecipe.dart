@@ -57,7 +57,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.addrecipe_recipe_added),
+          content: Text(AppLocalizations.of(context)!.recipe_added),
           backgroundColor: Colors.green,
         ),
       );
@@ -65,7 +65,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
     else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.addrecipe_recipe_not_added),
+          content: Text(AppLocalizations.of(context)!.recipe_not_added),
           backgroundColor: Colors.red,
         ),
       );
@@ -79,7 +79,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
     }
 
     return AlertDialog(
-      title: Text(AppLocalizations.of(context)!.addrecipe_enter_recipe_information),
+      title: Text(AppLocalizations.of(context)!.enter_recipe_information),
       content:  Container(
         width: 540, 
         height: 600, 
@@ -91,7 +91,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
             maxLength: 30,          
             maxLines: 1,
             decoration: InputDecoration(
-              labelText: AppLocalizations.of(context)!.addrecipe_label_name,
+              labelText: AppLocalizations.of(context)!.label_name,
               floatingLabelBehavior: FloatingLabelBehavior.always, 
               counter: SizedBox.shrink(),
               border: OutlineInputBorder(
@@ -107,7 +107,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
             maxLines: 2,
             maxLength: 100,           
             decoration: InputDecoration(
-              labelText: AppLocalizations.of(context)!.addrecipe_label_description,              
+              labelText: AppLocalizations.of(context)!.label_description,              
               floatingLabelBehavior: FloatingLabelBehavior.always, // Mantém o rótulo fixo na parte superior
               counter: SizedBox.shrink(),
               border: OutlineInputBorder(
@@ -126,9 +126,9 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
             child: DropdownButtonFormField<Type>(
               isExpanded: true, 
               icon: const Icon(Icons.receipt),
-              hint: Text(AppLocalizations.of(context)!.addrecipe_hint_type_recipe),
+              hint: Text(AppLocalizations.of(context)!.hint_type_recipe),
               decoration: InputDecoration(
-                label: Text(AppLocalizations.of(context)!.addrecipe_label_typerecipe),
+                label: Text(AppLocalizations.of(context)!.label_typerecipe),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                 )
@@ -155,7 +155,7 @@ class _AddRecipeDialogState extends State<AddRecipeDialog> {
             maxLines: 10,
             maxLength: 1000,            
             decoration: InputDecoration(
-              labelText: AppLocalizations.of(context)!.addrecipe_label_ingredients,              
+              labelText: AppLocalizations.of(context)!.label_ingredients,              
               floatingLabelBehavior: FloatingLabelBehavior.always,
               counter: SizedBox.shrink(),
               border: OutlineInputBorder(
