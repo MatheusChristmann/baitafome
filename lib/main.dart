@@ -11,6 +11,7 @@ void main() async {
   await windowManager.ensureInitialized();
 
   final callback = Callback(
+    
     onCreate: (database, version) {
       onCreateDB();
     },
