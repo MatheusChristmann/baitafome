@@ -31,5 +31,7 @@
    "label_paes": "Breads",
    "label_sopas": "Soups",
    "label_frangos": "Chickens",
-   "label_outros": "Others"
+   "label_outros": "Others",
+
+   "list_all_recipes": "All Recipes"
 }

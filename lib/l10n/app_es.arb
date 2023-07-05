@@ -31,5 +31,7 @@
    "label_paes": "Panes",
    "label_sopas": "Sopas",
    "label_frangos": "Pollos",
-   "label_outros": "Otros"  
+   "label_outros": "Otros",  
+
+   "list_all_recipes": "Todas las Recetas"
 }

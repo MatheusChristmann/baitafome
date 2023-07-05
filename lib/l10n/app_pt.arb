@@ -31,5 +31,7 @@
    "label_paes": "Pães",
    "label_sopas": "Sopas",
    "label_frangos": "Frangos",
-   "label_outros": "Outros"
+   "label_outros": "Outros",
+   
+   "list_all_recipes": "Todas as Receitas"
 }

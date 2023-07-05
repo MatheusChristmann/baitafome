@@ -4,8 +4,10 @@ import 'package:floor/floor.dart';
 class Type {
   @PrimaryKey()
   int id;
-
   String description;
 
-  Type({required this.id, required this.description});
+  Type({
+    required this.id, 
+    required this.description
+  });
 }

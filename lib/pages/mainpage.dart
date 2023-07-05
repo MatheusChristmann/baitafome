@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
               return [
                 PopupMenuItem<int>(
                   value: 0,
-                  child: Text("Todas as Receitas"),              
+                  child: Text(AppLocalizations.of(context)!.list_all_recipes),              
                 ),
               ];
             },

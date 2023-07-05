@@ -4,13 +4,9 @@ import 'package:floor/floor.dart';
 class Recipe {
   @PrimaryKey(autoGenerate: true)
   int? id;
-
   String? name; 
-
   String? description;
-
   String? ingredients;
-
   int? type;  
 
   Recipe({    
